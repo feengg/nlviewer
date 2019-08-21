@@ -146,7 +146,8 @@ class parser:
                 #print(port_map_s)
                 port_map_l = port_map_s.split(',')
                 for pm in port_map_l:
-                    r = re.match(r'\.(\w+)\((\w+)\)', pm)
+                    r = re.match(r'\.(\w+)\((.*)\)', pm) #.* match xx[2], xx[2:0]
+                    #print(r)
                     if r:
                         inst_temp.add_port_map(r.group(1), r.group(2))
                         if module_temp.exist_wire(r.group(2)):
@@ -166,7 +167,7 @@ class parser:
                 
 if __name__ == '__main__':
     parser = parser()
-    parser.read_netlist("tcon_top_pr.v")
+    parser.read_netlist("test.v")
 
     #parser.designs[0].print_this()
     parser.designs[0].get_wires()

@@ -21,8 +21,9 @@ if __name__ == '__main__':
 #
 
     parser = parser.parser()
-    parser.read_netlist("tcon_top_pr.v")
+    parser.read_netlist("test.v")
 
-    #parser.designs[0].print_this()
-    parser.designs[0].get_wires()
+    parser.designs[0].print_this()
+    parser.designs[1].print_this()
+    #parser.designs[0].get_wires()
     
